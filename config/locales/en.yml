@@ -30,4 +30,37 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    models:
+      bank:
+        creation_error: 'prohibited this bank from being saved:'
+  helpers:
+    submit:
+      create: Create %{model}
+      update: Update %{model}
+    views:
+      new: New %{model}
+      edit: Edit %{model}
+      editing: Editing %{model}
+  banks:
+    edit:
+      title: Editing Bank
+    index:
+      new: New Bank
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      delete_confirmation: Are you sure?
+    new:
+      back: Back
+    notices:
+      created: Bank was successfully created.
+      updated: Bank was successfully updated.
+      destroyed: Bank was successfully destroyed.
+  activerecord:
+    models:
+      user: User
+      bank: Bank
+    attributes:
+      bank:
+        name: Name
