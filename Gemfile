@@ -30,10 +30,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
-  gem 'rspec-rails', '~> 6.1.0'
-  gem 'pry-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 6.1.0'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -51,3 +52,5 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.9'
+
+gem 'simple_form'

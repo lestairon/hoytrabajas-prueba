@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('activerecord.attributes.provider.name') %>:</strong>
+  <%= @provider.name %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.provider.nit') %>:</strong>
+  <%= @provider.nit %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.provider.contact_name') %>:</strong>
+  <%= @provider.contact_name %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.provider.contact_number') %>:</strong>
+  <%= @provider.contact_number %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>

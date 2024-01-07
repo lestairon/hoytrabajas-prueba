@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Bank', type: :request do
   describe 'index' do
     let(:path) { banks_path }
-    let!(:banks) { create_list(:bank, 10) }
+    let!(:banks) { (0...10).map { |index| create(:bank, name: "Pepe Calavera #{index}") } }
 
     it 'shows all created banks' do
       get path
-      
+
       banks.each do |bank|
         expect(response.body).to include(bank.name)
       end
@@ -38,7 +38,7 @@ RSpec.describe 'Bank', type: :request do
     let(:bank) { create(:bank) }
     let(:path) { bank_path(bank) }
     let(:data) { { bank: { name: new_name } } }
-    
+
     context 'with valid data' do
       let(:new_name) { Faker::Name.name }
 
@@ -51,7 +51,7 @@ RSpec.describe 'Bank', type: :request do
       let(:new_name) { 'a' * 51 }
 
       it 'does not change the bank name' do
-        expect { patch path, params: data }.not_to change { bank.reload.name }
+        expect { patch path, params: data }.not_to(change { bank.reload.name })
       end
     end
   end

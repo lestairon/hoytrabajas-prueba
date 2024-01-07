@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_04_091556) do
+ActiveRecord::Schema.define(version: 2024_01_04_194634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bank_accounts", force: :cascade do |t|
+    t.bigint "bank_id", null: false
+    t.bigint "provider_id", null: false
+    t.string "number", limit: 15, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bank_id"], name: "index_bank_accounts_on_bank_id"
+    t.index ["provider_id"], name: "index_bank_accounts_on_provider_id"
+  end
+
   create_table "banks", force: :cascade do |t|
     t.string "name", limit: 50
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "name"
+    t.string "nit"
+    t.string "contact_name"
+    t.string "contact_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,4 +52,6 @@ ActiveRecord::Schema.define(version: 2024_01_04_091556) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bank_accounts", "banks"
+  add_foreign_key "bank_accounts", "providers"
 end
