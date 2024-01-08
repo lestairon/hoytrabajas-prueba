@@ -42,6 +42,7 @@ en:
       new: New %{model}
       edit: Edit %{model}
       editing: Editing %{model}
+      not_present: Table without information
   banks:
     edit:
       title: Editing Bank
@@ -57,10 +58,23 @@ en:
       created: Bank was successfully created.
       updated: Bank was successfully updated.
       destroyed: Bank was successfully destroyed.
+  providers:
+    index:
+      new: New Provider
+      delete_confirmation: Are you sure?
+    notices:
+      created: Provider was successfully created.
+      updated: Provider was successfully updated.
+      destroyed: Provider was successfully destroyed.
   activerecord:
     models:
       user: User
       bank: Bank
     attributes:
+      provider:
+        contact_name: Provider Contact Name
+        contact_number: Provider Contact Number
       bank:
-        name: Name
+        name: Bank Name
+      bank_account:
+        number: Bank Account Number

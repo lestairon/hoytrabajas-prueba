@@ -1,0 +1,12 @@
+.provider {
+  &--table {
+    th,
+    td {
+      padding: 2%;
+    }
+
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+  }
+}

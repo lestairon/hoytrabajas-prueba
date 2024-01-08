@@ -54,3 +54,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise', '~> 4.9'
 
 gem 'simple_form'
+
+gem 'pagy', '~> 6.2'
