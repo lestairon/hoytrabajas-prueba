@@ -58,6 +58,8 @@ en:
       created: Bank was successfully created.
       updated: Bank was successfully updated.
       destroyed: Bank was successfully destroyed.
+    dashboard:
+      count: Banks Count
   providers:
     index:
       new: New Provider
@@ -66,6 +68,8 @@ en:
       created: Provider was successfully created.
       updated: Provider was successfully updated.
       destroyed: Provider was successfully destroyed.
+    dashboard:
+      count: Provider Count
   activerecord:
     models:
       user: User
